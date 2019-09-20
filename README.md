@@ -142,4 +142,4 @@ Replace the **secretOrKey** in `/config/keys.js` with your own secret key.
 
 ## ✍️ Author <a name = "authors"></a>
 
-- [@Jayesh Kukreja](https://github.com/jaykukreja) - Cause-Code
+- [@Jayesh Kukreja](https://github.com/jaykukreja) - devNetwork
