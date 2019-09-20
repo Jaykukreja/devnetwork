@@ -28,7 +28,7 @@ Replace the **secretOrKey** in `/config/keys.js` with your own secret key.
 
 ### Get started:
 
-- Clone this repo: `git clone https://github.com/jakukreja/devnetwork.git`
+- Clone this repo: `git clone https://github.com/jaykukreja/devnetwork.git`
 - Change directory: `cd devnetwork`
 - Install required modules: `npm install`
 - To run server: `npm run server`\
