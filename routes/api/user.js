@@ -1,10 +1,10 @@
 const express=require('express')
 const router = express.Router();
+const passport =require('passport');
 const gravatar =require('gravatar');
 const bcrypt = require('bcryptjs');
 const jwt =require("jsonwebtoken");
 const keys=require('../../config/keys')
-const passport =require('passport');
 
 //load user model
 const User = require('../../models/User')
@@ -59,7 +59,7 @@ router.post('/register',(req,res)=>{
 router.post('/login',(req,res)=>{
 	const email=req.body.email;
 	const password=req.body.password;
-
+	console.log("ko")
 	//find user by email
 	User.findOne({email})
 	.then(user => {
@@ -75,15 +75,18 @@ router.post('/login',(req,res)=>{
 				//user matched
 
 
-				const payload={id:user.id,name:user.name,avatar: user.avatar}  //create jwt payload
+				const payload={id:user.id,name:user.name,avatar: user.avatar}
+				console.log(payload)
+				  //create jwt payload
 				//sign token
-				jwt.sign(payload,
-					keys.secretOrkey,
-					{expiresIn:3600}, 
+				jwt.sign(
+					payload,
+					keys.secretOrKey,
+					{expiresIn:3600},
 					(err,token)=>{
 						res.json({
 							success:true,
-							token:'Bearer' + token
+							token:'Bearer ' + token
 						})
 					});
 			}
@@ -100,7 +103,12 @@ router.post('/login',(req,res)=>{
 // @desc     return current user
 // @access   private
 router.get('/current',passport.authenticate('jwt',{session :false}),(req,res)=>{
-	res.json({msg:'success'})
+	console.log("jiii3344")
+	res.json({
+		id: req.user.id,
+		name: req.user.name,
+		email: req.user.email
+	});
 })
 
 module.exports=router;
