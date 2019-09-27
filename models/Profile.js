@@ -3,7 +3,12 @@ const mongoose = require('mongoose');
 const ProfileSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'user'
+    ref: 'users'
+  },
+  handle:{
+    type: String,
+    required:true,
+    max: 40
   },
   company: {
     type: String
@@ -28,6 +33,7 @@ const ProfileSchema = new mongoose.Schema({
   githubusername: {
     type: String
   },
+  //array of objects
   experience: [
     {
       title: {
@@ -87,6 +93,7 @@ const ProfileSchema = new mongoose.Schema({
       }
     }
   ],
+  //here social has a object of fields
   social: {
     youtube: {
       type: String
