@@ -16,7 +16,6 @@ module.exports = passport => {
 			.then(user=>{
 				if (user){
 					return done(null,user);
-					console.log("ji22i")
 				}
 				return done(null,false);
 
