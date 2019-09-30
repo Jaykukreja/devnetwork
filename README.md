@@ -31,73 +31,8 @@ Replace the **secretOrKey** in `/config/keys.js` with your own secret key.
 - Clone this repo: `git clone https://github.com/jaykukreja/devnetwork.git`
 - Change directory: `cd devnetwork`
 - Install required modules: `npm install`
-- To run server: `npm run server`\
-  Server should be started on [Localhost:5000](http://localhost:5000/api/users/register)
-
-## Project Structure <a name = "getting_started"></a>
-
-    => client
-        => node_modules
-        => public
-            - favicon.ico
-            - index.html
-            - logo192.png
-            - logo512.png
-            - manifest.json
-            - robots.txt
-        => src
-            => actions
-                - authActions.js
-                - types.js
-            => components
-                => auth
-                    - Login.js
-                    - Register.js
-                => layout
-                    - Footer.js
-                    - Landing.js
-                    - Navbar.js
-            => img
-                - showcase.jpg
-            => reducers
-                - authReducers.js
-                - errorReducers.js
-                - index.js
-            - App.css
-            - App.js
-            - App.test.js
-            - index.css
-            - index.js
-            - serviceWorker.js
-            - store.js
-        - .gitignore
-        - package.json
-        - README.md
-    => config
-        - keys.js
-        - passport.js
-    => models
-        - Post.js
-        - Profile.js
-        - User.js
-    => node_modules
-    => routes
-        => api
-            - posts.js
-            - profile.js
-            - users.js
-    => validation
-        - education.js
-        - experience.js
-        - is-empty.js
-        - login.js
-        - post.js
-        - profile.js
-        - register.js
-    .gitignore
-    package.json
-    README.md
-    server.js
+- To run server: `npm start`\
+  Get started with [Registration](http://localhost:5000/api/users/register)
 
 ## 🧐 CauseCode Coding Challenge <a name = "Create a small social network"></a>
 
@@ -118,7 +53,7 @@ Replace the **secretOrKey** in `/config/keys.js` with your own secret key.
 
 # Screenshots <a name = "Screenshots"></a>
 
-- will be added later
+<img src="screenshots/1.jpg" alt="1.jpg"/>
 
 # Features:
 
@@ -133,12 +68,9 @@ Replace the **secretOrKey** in `/config/keys.js` with your own secret key.
     ❖ Update your profile picture and personal details anytime
     ❖ Tools to create posts
     ❖ Like, comment
-    ❖ Post is seen
-    ❖ View Post by a user
     ❖ Shows Number of likes and comments
-    ❖ Onclick post, single page view of post with all the comments on it
+    ❖ Shows all posts, comments on posts
     ❖ You can search a particular user by username, email by id as well
-    ❖ Dashboard which shows the records of user
 
 ## ✍️ Author <a name = "authors"></a>
 
