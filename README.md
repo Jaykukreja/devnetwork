@@ -52,6 +52,7 @@ Replace the **secretOrKey** in `/config/keys.js` with your own secret key.
 # Screenshots <a name = "Screenshots"></a>
 
 <img src="screenshots/1.png" alt="1.png"/>
+<img src="screenshots/3.png" alt="3.png"/>
 
 # Features:
 
