@@ -8,7 +8,7 @@
 
 # DEMO
 
-#### [YouTube](https://www.youtube.com/)
+#### [YouTube](https://youtu.be/6WhdVqCRES8)
 
 </div>
 
@@ -17,9 +17,7 @@
 - [MongoDB](https://www.mongodb.com/)
 - [Express](https://expressjs.com/)
 - [NodeJs](https://nodejs.org/en/)
-- [BootStrap 4](https://getbootstrap.com/)
-- [ReactJS](https://reactjs.org/)
-- [Redux](https://redux.js.org/)
+- [Passport-jwt](http://www.passportjs.org/packages/passport-jwt/)
 
 ### Configuration:
 
@@ -53,13 +51,23 @@ Replace the **secretOrKey** in `/config/keys.js` with your own secret key.
 
 # Screenshots <a name = "Screenshots"></a>
 
-<img src="screenshots/1.jpg" alt="1.jpg"/>
+<img src="screenshots/1.png" alt="1.png"/>
 
 # Features:
 
     Registration and Login
-        • User will have to register themselves by providing basic information such as name and email about them and then they can login into the system.
-        • Once users have logged in, users will be able to post, like other's post and comment.
+        * User will have to register themselves by providing basic information such as name and email about them and then they can login into the system.
+        * Once users have logged in, users will be able to Create Post, Like/Unlike other's Post and Comment.
+        * users will be able to :
+        -DELETE Post,Profile 
+        -ADD/REMOVE Education and Experience
+        -Update Profile
+        -Delete Profile
+        -ADD/REMOVE Comments
+        -UPDATE Post
+        -DELETE Post
+        
+        
 
 # Functionality
 
@@ -72,6 +80,6 @@ Replace the **secretOrKey** in `/config/keys.js` with your own secret key.
     ❖ Shows all posts, comments on posts
     ❖ You can search a particular user by username, email by id as well
 
-## ✍️ Author <a name = "authors"></a>
+## ✍️ Author <a name = "Jayesh Kukreja"></a>
 
 - [@Jayesh Kukreja](https://github.com/jaykukreja) - devNetwork
