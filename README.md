@@ -18,6 +18,9 @@
 - [Express](https://expressjs.com/)
 - [NodeJs](https://nodejs.org/en/)
 - [Passport-jwt](http://www.passportjs.org/packages/passport-jwt/)
+- [bcrypt-nodejs](https://www.npmjs.com/package/bcrypt-nodejs)
+- [express-validator](https://www.npmjs.com/package/express-validator)
+- [gravatar](https://www.npmjs.com/package/gravatar)
 
 ### Configuration:
 
@@ -52,7 +55,13 @@ Replace the **secretOrKey** in `/config/keys.js` with your own secret key.
 # Screenshots <a name = "Screenshots"></a>
 
 <img src="screenshots/1.png" alt="1.png"/>
+<img src="screenshots/2.png" alt="2.png"/>
 <img src="screenshots/3.png" alt="3.png"/>
+<img src="screenshots/4.png" alt="4.png"/>
+<img src="screenshots/6.png" alt="6.png"/>
+<img src="screenshots/9.png" alt="9.png"/>
+<img src="screenshots/10.png" alt="10.png"/>
+<img src="screenshots/12.png" alt="12.png"/>
 
 # Features:
 
@@ -67,6 +76,8 @@ Replace the **secretOrKey** in `/config/keys.js` with your own secret key.
         -ADD/REMOVE Comments
         -UPDATE Post
         -DELETE Post
+        * Passport JWT Authentication
+        * Validation Handlers
         
         
 
