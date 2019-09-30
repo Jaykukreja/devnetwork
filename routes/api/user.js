@@ -1,5 +1,6 @@
 const express=require('express')
 const router = express.Router();
+const mongoose =require('mongoose');
 const passport =require('passport');
 const gravatar =require('gravatar');
 const bcrypt = require('bcryptjs');
@@ -8,14 +9,14 @@ const keys=require('../../config/keys');
 
 
 //load input validation 
-const validateRegisterInput = require('../../validation/register');
-const validateLoginInput = require('../../validation/login');
+const validateRegisterinput = require('../../validation/register');
+const validateLogininput = require('../../validation/login');
 
 //load user model
 const User = require('../../models/User')
 
-// @route    POST api/users
-// @desc     Register user
+// @route    POST api/users/test
+// @desc     Tests profile route
 // @access   Public
 router.get('/test',(req,res)=>res.json({msg:"it workss"}));
 
@@ -25,15 +26,13 @@ router.get('/test',(req,res)=>res.json({msg:"it workss"}));
 // @access   Public
 router.post('/register',(req,res)=>{
 	console.log(req.body)
-	const { errors,isValid }= validateRegisterInput(req.body);
+	const { errors, isValid }= validateRegisterinput(req.body);
 
 	// check validation 
 	if (!isValid){
-		console.log("ji")
 		return res.status(400).json(errors);
 	}
 
-	else{
 	User.findOne({email:req.body.email})
 		.then(user => {
 			if(user){
@@ -66,20 +65,16 @@ router.post('/register',(req,res)=>{
 				})
 
 			}
-		})}
+		})
 })
 
 // @route    POST api/users/login
 // @desc     login user / returning JWT token
 // @access   Public
 router.post('/login',(req,res)=>{
-
-	console.log(req.body)
-	const { errors,isValid }= validateLoginInput(req.body);
-
+	const { errors,isValid }= validateLogininput(req.body);
 	// check validation 
-	if (isValid){
-		console.log("ji")
+	if (!isValid){
 		return res.status(400).json(errors);
 	}
 
@@ -101,11 +96,8 @@ router.post('/login',(req,res)=>{
 		.then(isMatch =>{
 			if(isMatch){
 				//user matched
-
-
 				const payload={id:user.id,name:user.name,avatar: user.avatar}
-				console.log(payload)
-				  //create jwt payload
+				//create jwt payload
 				//sign token
 				jwt.sign(
 					payload,
@@ -132,7 +124,6 @@ router.post('/login',(req,res)=>{
 // @desc     return current user
 // @access   private
 router.get('/current',passport.authenticate('jwt',{session :false}),(req,res)=>{
-	console.log("jiii3344")
 	res.json({
 		id: req.user.id,
 		name: req.user.name,

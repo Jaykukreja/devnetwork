@@ -2,9 +2,6 @@ const validator=require('validator');
 const isEmpty=require('./is-empty');
 module.exports = function validateLogininput(data){
 	let errors ={};
-	console.log("data")
-	//console.log(data.name)
-
 	
 	data.email=!isEmpty(data.email) ? data.email : '';
 	data.password=!isEmpty(data.password) ? data.password : '';

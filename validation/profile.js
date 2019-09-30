@@ -2,8 +2,6 @@ const validator=require('validator');
 const isEmpty=require('./is-empty');
 module.exports = function validateProfileinput(data){
 	let errors ={};
-	console.log("data")
-	console.log(data.handle)
 
 	
 	data.handle=!isEmpty(data.handle) ? data.handle : '';
@@ -12,7 +10,7 @@ module.exports = function validateProfileinput(data){
 
 	
     if(!validator.isLength(data.handle ,{min:2 ,max:40 })){
-        errors.handle=" handle needs to be between 2 and 4 characters"
+        errors.handle=" handle needs to be between 2 and 40 characters"
     }
 
     if(validator.isEmpty(data.handle)){

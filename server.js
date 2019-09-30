@@ -1,17 +1,19 @@
 const express =require('express');
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
-//const connectDB = require('./config/db');
 const passport =require('passport');
+
+// Define Routes
 const user=require('./routes/api/user');
+const post=require('./routes/api/post');
+const profile=require('./routes/api/profile');
+
 //intialize express
 const app = express();
 
 // DB 
 const db =require('./config/keys').mongoURI;
 console.log(db)
-
-
 
 //passport middleware
 app.use(passport.initialize());
@@ -32,27 +34,12 @@ mongoose
 	.catch(err=> console.log(err))
 
 
-// Define Routes
-
-//const post=require('./routes/api/post');
-//const profile=require('./routes/api/profile');
-//const path = require('path');
-
-
-
-
-
-
-
-
-
-
 app.get('/',(req,res)=> res.send('hello world'));
 
-
+/**Use routes */
 app.use('/api/user',user)
-//app.use('/api/post',post)
-//app.use('/api/profile',profile)
+app.use('/api/posts',post)
+app.use('/api/profile',profile)
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log('Server started on port ${PORT}'));

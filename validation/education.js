@@ -2,8 +2,6 @@ const validator=require('validator');
 const isEmpty=require('./is-empty');
 module.exports = function validateEducationinput(data){
 	let errors ={};
-	console.log("data222")
-	//console.log(data.name)
 
 	
 	data.school=!isEmpty(data.school) ? data.school : '';
